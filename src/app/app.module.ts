@@ -25,7 +25,7 @@ import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 
 const config: SocketIoConfig = { 
-  url: 'http://localhost:3000',
+  url: 'https://timerbe.heroku.app:3000',
   options: {},
 };
 
