@@ -25,6 +25,7 @@ import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 
 import { environment } from '../environments/environment';
+import { TimerComponent } from './timer/timer.component';
 
 const config: SocketIoConfig = { 
   url: environment.socketurl,
@@ -35,7 +36,8 @@ const config: SocketIoConfig = {
   declarations: [
     AppComponent,
     ControllerComponent,
-    NavbarComponent
+    NavbarComponent,
+    TimerComponent
   ],
   imports: [
     BrowserModule,

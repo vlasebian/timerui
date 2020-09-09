@@ -12,7 +12,6 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./controller.component.scss']
 })
 export class ControllerComponent implements OnInit, OnDestroy {
-  title = 'Timer UI';
   event = 'bestem';
   state = 'UNDEFINED';
   enddate = null;
@@ -99,9 +98,6 @@ export class ControllerComponent implements OnInit, OnDestroy {
     component.clock.h = hrs;
     component.clock.m = min;
     component.clock.s = sec;
-
-    console.log(component.state);
-    console.log(component.clock);
   }
 
   // Event emitters.

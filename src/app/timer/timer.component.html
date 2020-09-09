@@ -1,0 +1,8 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+    <div *ngIf="this.state === 'UNDEFINED'; else elseBlock">
+        <h1>{{this.state}}</h1>
+    </div>
+    <ng-template #elseBlock>
+        <h1>{{this.clock.h}}:{{this.clock.m}}:{{this.clock.s}}</h1>
+    </ng-template>
+</div>

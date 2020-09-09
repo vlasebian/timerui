@@ -1,8 +1,8 @@
-<div class="container" *ngIf="auth.loggedIn">
+<div class="container" *ngIf="auth.loggedIn; else onlyTimer">
 
     <header
         fxLayout="column"
-        fxLayoutAlign="flex-start center"
+        fxLayoutAlign="center center"
         fxLayoutGap="2vh"
         >
 
@@ -96,3 +96,7 @@
     </main>
 
 </div>
+
+<ng-template #onlyTimer>
+    <app-timer></app-timer>
+</ng-template>

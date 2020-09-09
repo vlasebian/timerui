@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  socketurl: 'http://localhost:3000',
+  socketurl: 'https://timerbe.herokuapp.com/',
+  //socketurl: 'http://localhost:3000',
 };
 
 /*
