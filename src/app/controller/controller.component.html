@@ -1,0 +1,98 @@
+<div class="container" *ngIf="auth.loggedIn">
+
+    <header
+        fxLayout="column"
+        fxLayoutAlign="flex-start center"
+        fxLayoutGap="2vh"
+        >
+
+        <div>
+            <div *ngIf="this.state === 'UNDEFINED'; else elseBlock">
+                <h1>{{this.state}}</h1>
+            </div>
+            <ng-template #elseBlock>
+                <h1>{{this.clock.h}}:{{this.clock.m}}:{{this.clock.s}}</h1>
+            </ng-template>
+        </div>
+
+
+        <button
+            mat-raised-button
+            color="primary"
+            (click)="startTimer()"
+            [disabled]="isStartBtnDisabled()"
+            >
+            Start
+        </button>
+
+        <button
+            mat-raised-button
+            color="accent"
+            (click)="pauseTimer()"
+            [disabled]="isPauseBtnDisabled()"
+            >
+            Pause
+        </button>
+
+        <button
+            mat-raised-button
+            color="primary"
+            (click)="stopTimer()"
+            [disabled]="isStopBtnDisabled()"
+            >
+            Stop
+        </button>
+
+    </header>
+
+    <main>
+        <form fxLayout="column"
+            fxLayoutGap="2vh"
+            fxLayoutAlign="center center"
+            class="reset-timer-form"
+            [formGroup]="setForm"
+            autocomplete="off"
+            novalidate
+            (ngSubmit)="onSubmit(setForm.value)"
+            >
+
+            <h1> Reset timer </h1>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Hours</mat-label>
+                <input matInput type="number" placeholder="Hours" formControlName="hours">
+                <mat-error *ngIf="hasError('hours', 'required')">
+                    Number of hours is required.
+                </mat-error>
+            </mat-form-field>
+        
+            <mat-form-field appearance="outline">
+                <mat-label>Minutes</mat-label>
+                <input matInput type="number" placeholder="Minutes" formControlName="minutes">
+                <mat-error *ngIf="hasError('minutes', 'required')">
+                    Number of minutes is required.
+                </mat-error>
+                <!-- <mat-hint>Maximum value: 60 minutes.</mat-hint> -->
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Seconds</mat-label>
+                <input matInput type="number" placeholder="Seconds" formControlName="seconds">
+                <mat-error *ngIf="hasError('seconds', 'required')">
+                    Number of seconds is required.
+                </mat-error>
+                <!-- <mat-hint>Maximum value: 60 seconds.</mat-hint> -->
+            </mat-form-field>
+
+            <button
+                mat-raised-button
+                color="primary"
+                [disabled]="!setForm.valid"
+                >
+                Reset
+            </button>
+
+        </form>
+    </main>
+
+</div>

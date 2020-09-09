@@ -1,0 +1,22 @@
+<mat-toolbar color="secondary">
+    <span>Timer Controller</span>
+    <span class="spacer"></span>
+    <button mat-button="mat-button"
+            class="logout-icon"
+            aria-label="Logout from timer controller"
+            *ngIf="auth.loggedIn"
+            (click)="auth.logout()"
+            >
+        <mat-icon>exit_to_app</mat-icon>
+        Logout
+    </button>
+    <button mat-button="mat-button"
+            class="logout-icon"
+            aria-label="Logout from timer controller"
+            *ngIf="!auth.loggedIn"
+            (click)="auth.login()"
+            >
+        <mat-icon>input</mat-icon>
+        Login
+    </button>
+</mat-toolbar>
