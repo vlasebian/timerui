@@ -24,8 +24,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 
+import { environment } from '../environments/environment';
+
 const config: SocketIoConfig = { 
-  url: 'https://timerbe.heroku.app:3000',
+  url: environment.socketurl,
   options: {},
 };
 
